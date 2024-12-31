@@ -1,0 +1,155 @@
+/* ==UserStyle==
+@name           AdwList
+@namespace      github.com/danatationn/AdwList
+@version        1.0.0
+@description    a stylesheet aiming to make filelist look a bit more akin to adwaita
+@author         danatationn
+==/UserStyle== */
+@-moz-document url-prefix("https://filelist.io/") {
+/* colors */
+:root {
+	--h: #1d2021;
+	--s: #32302f;
+	--bg0: #282828;
+	--bg1: #3c3836;
+	--bg2: #504945;
+	--bg3: #665c54;
+	--bg4: #7c6f64;
+	--gray: #928374;
+	--fg: #ebdbb2;
+
+	--red: #cc241d;
+	--green: #98971a;
+	--yellow: #d79921;
+	--blue: #458588;
+	--purple: #b16286;
+	--aqua: #689d6a;
+}
+
+/* -- general stuff -- */
+a:link { color: var(--blue); }
+a:visited { color: var(--purple); }
+
+/* --- navbar --- */
+
+.mainheader { background: var(--bg0); }
+
+#nav { background: var(--h); }
+#nav ul li a { color: var(--fg); }
+#nav ul li:hover { background: var(--bg0); }
+#nav ul li a:hover { color: var(--fg); }
+#nav ul li.active { background: var(--bg1); }
+#nav ul li.active a { color: var(--fg); }
+
+#wrapper { background-color: var(--bg0); }
+
+/* --- statusbar --- */
+
+.statusbar { 
+	color: var(--fg); 
+	background: none;
+}
+.statusbar a { color: var(--fg); }
+.statusbar div:not(.status_avatar) div { background: var(--bg1); }
+
+/* --- posts --- */
+
+.nblock-header, .nblock-headerleft, .nblock-headerright, 
+.cblock-header, .cblock-headerleft, .cblock-headerright, 
+.sblock-header, .sblock-headerleft, .sblock-headerright {
+	background: var(--bg1);
+}
+
+.nblock-content, .cblock-content, .sblock-content, .colhead,
+.nblock-bottom, .cblock-bottom, .sblock-bottom{
+	background: var(--bg2);
+}
+
+.barmax { background: var(--aqua); }
+.bar { background: var(--yellow); }
+}
+
+@-moz-document url-prefix("https://filelist.io/") {
+/* changes */
+
+/* --- header --- */
+.mainheader { height: 128px; }
+.subheader { width: 100%; }
+#navigation {
+	margin: 0;
+	top: 0;
+	width: 100%;
+}
+#nav { 
+	height: 32px;
+	padding: 4px;
+}
+#nav ul li {
+	border-radius: 8px;
+	margin-right: 4px;
+}
+.logo {
+	display: none;
+}
+
+/* statusbar */
+
+.statusbar {
+	border: 0;
+	width: 100%;
+	text-align: center;
+}
+
+.statusbar div {
+	float: none !important;
+	display: inline !important;
+}
+.statusbar div:not(.status_avatar) div {
+	padding: 8px !important;
+	margin-right: 8px;
+	border-radius: 16px;
+}
+
+.status_avatar img {
+	border-radius: 50%;
+	margin-left: 8px;
+}
+	
+
+
+/* --- posts --- */
+.nblock-headerleft, .cblock-headerleft, .sblock-headerleft {
+	border-radius: 16px 0 0 0;
+}
+.nblock-headerright, .cblock-headerright, .sblock-headerright {
+	border-radius: 0 16px 0 0;
+}
+.nblock-bottom, .cblock-bottom, .sblock-bottom {
+	border-radius: 0 0 16px 16px;
+}
+	
+.colhead {
+	border: 0;
+}
+
+.barmax, .bar {
+	border: 0;
+	border-radius: 4px;
+}
+
+.torrenttable img {
+	border-radius: 8px;
+}
+
+}
+
+@-moz-document url-prefix("https://filelist.io/") {
+/* fonts */
+:root {
+	--font-family: "Cantarell";
+}
+
+html, body, #navigation, #footerInner h2, .cblock-header h4, .nblock-header h4, .sblock-header h4, select, textarea, input, #poll_container {
+	font-family: var(--font-family);
+}
+}
