@@ -14,3 +14,6 @@ Note this isn't trying to completely imitate it as that would take way too long 
 - [ ] custom border-radius
 - [ ] custom font
 - [ ] the navbar in the sidebar or Not
+
+## license
+[WTFPL](https://github.com/danatationn/adwlist/blob/main/LICENSE) © Sam Hocevar
