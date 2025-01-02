@@ -2,317 +2,322 @@
 @name           AdwList
 @namespace      github.com/danatationn/AdwList
 @version        1.0.0
-@description    a stylesheet aiming to make filelist look a bit more akin to adwaita
+@description    a stylesheet aiming to make FileList look more modern
 @author         danatationn
 ==/UserStyle== */
 @-moz-document url-prefix("https://filelist.io/") {
-	/* colors */
-	:root {
-		--h: #1d2021;
-		--s: #32302f;
-		--bg0: #282828;
-		--bg1: #3c3836;
-		--bg2: #504945;
-		--bg3: #665c54;
-		--bg4: #7c6f64;
-		--bg5: #928374;
-		--fg4: #a89984;
-		--fg3: #bdae93;
-		--fg2: #d5c4a1;
-		--fg1: #ebdbb2;  /* text color */
-		--fg0: #fbf1c7;
-
-		--dred: #cc241d;
-		--dorange: #d65d0e;
-		--dyellow: #d79921;
-		--dgreen: #98971a;
-		--daqua: #689d6a;
-		--dblue: #458588;
-		--dpurple: #b16286;
-
-		--bred: #fb4934;
-		--borange: #fe8019;
-		--byellow: #fabd2f;
-		--bgreen: #b8bb26;
-		--baqua: #8ec07c;
-		--bblue: #83a598;
-		--bpurple: #d3869b;
-	}
-
-	/* -- general stuff -- */
-
-	a:link { color: var(--dblue); }
-	a:visited { color: var(--dpurple); }
-
-	input, select, input.btn, input.lbtn {
-		background: var(--bg3);
-		color: var(--fg1) !important;
-	}
-	input.btn:hover, input.lbtn:hover {
-		background: var(--bg4);
-	}
-	input.btn:active, input.lbtn:active {
-		background: var(--bg5);
-	}
-
-	.pager a, .pager a:link,
-	.forumpager a, .forumpager a:link {
-		background: var(--bg3);
-		color: var(--fg1);
-	}
-	.pager span.current { background: var(--bg5); }
-	.pager a:hover { background: var(--bg4); }
-	.pager a:active { background: var(--bg5); }
-
-	/* --- navbar --- */
-
-	.mainheader { background: var(--bg0); }
-
-	#nav { background: var(--h); }
-	#nav ul li a { color: var(--fg1); }
-	#nav ul li:hover, #nav ul li.active {
-		background: var(--bg0);
-	}
-	#nav ul li.active a { color: var(--fg1); }
-	#nav ul li a:hover { color: var(--fg1); }
-	#nav ul li:active { background: var(--bg1); }
-
-	#wrapper { background-color: var(--bg0); }
-
-	/* --- statusbar --- */
-
-	.statusbar {
-		color: var(--fg1);
-		background: none;
-	}
-	.statusbar a { color: var(--fg1); }
-	.statusbar div:not(.status_avatar) div { background: var(--bg1); }
-
-	/* --- content --- */
-
-	.nblock-header, .nblock-headerleft, .nblock-headerright,
-	.cblock-header, .cblock-headerleft, .cblock-headerright, .cblock-top,
-	.sblock-header, .sblock-headerleft, .sblock-headerright {
-		background: var(--bg1);
-		box-shadow: inset 0 0 0 1px var(--bg2);
-	}
-
-	.nblock-content, .cblock-content, .sblock-content, .colhead,
-	.nblock-bottom, .cblock-bottom, .sblock-bottom{
-		background: var(--bg2);
-	}
-
-	.clearfix::after {
-		content: '';
-		padding-bottom: 2px;
-		visibility: visible;
-		background: linear-gradient(0deg, var(--bg1), transparent);
-	}
-
-	.barmax { background: var(--daqua); }
-	.bar { background: var(--dyellow); }
-
-	/* --- posts --- */
-	.torrentrow {
-		background: var(--bg1);
-	}
-	.torrenttable {
-		border-color: var(--bg1);
-	}
-
-	/* --- tables --- */
-	td { background: var(--bg1); }
-	td.colhead { background: var(--bg0); }
-	tr { background: none; }
-
-	table {
-		border: 0;
-		border-radius: var(--border-radius);
-		background: none;
-	}
-	table th {
-		background: var(--bg0);
-		color: var(--fg1);
-		text-shadow: none;
-	}
-	table td, table tr.even td, table tr:hover {
-		background: var(--bg1);
-		text-shadow: none;
-	}
-	.infomark {
-		color: var(--fg1);
-	}
-
-	/* --- forum --- */
-	#sectionmain .sectiontitle { background: var(--bg1); }
-	#forummain .forumrow { background: var(--bg1); }
-
-	/* --- legend ??? --- */
-	fieldset, legend { background: var(--bg1); }
-
-	/* --- footer --- */
-	#footer, #copyright { background: var(--h); }
-	#footerInner h2 { border-color: var(--bg5); }
-
+  /* --- posts --- */
+  .torrentrow:last-of-type {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  .torrentrow:first-of-type {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    background: #fff;
+  }
+  /* --- tables --- */
+  #sectionmain .sectiontitle {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+    border: 0;
+  }
+  #forummain .forumrow {
+    border: 0;
+  }
+  #forummain .forumrow:last-of-type {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  /* --- footer --- */
+  #footer {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
 }
-@-moz-document url-prefix("https://filelist.io/") {
-	/* changes */
 
-	:root {
-		--border-radius: 8px;
-	}
-
-	/* --- general stuff --- */
-	input, select, input.btn {
-		border: 0;
-		border-radius: var(--border-radius);
-	}
-	input.btn, input.btn:hover {
-		padding: 2px;
-	}
-
-	.pager span a, .pager span.current, .pager a:link,
-	.forumpager span a, .forumpager span.current, .forumpager a:link {
-		border: 0;
-		border-radius: var(--border-radius);
-	}
-
-	/* --- header --- */
-	.mainheader { height: 128px; }
-	.subheader { width: 100%; }
-	#navigation {
-		margin: 0;
-		top: 0;
-		width: 100%;
-	}
-	#nav {
-		height: 32px;
-		padding: 4px;
-	}
-	#nav ul li {
-		border-radius: calc(var(--border-radius) / 2);
-		margin-right: 4px;
-	}
-	.logo {
-		display: none;
-	}
-
-	/* statusbar */
-
-	.statusbar {
-		border: 0;
-		width: 100%;
-		text-align: center;
-	}
-
-	.statusbar div {
-		float: none !important;
-		display: inline !important;
-	}
-	.statusbar div:not(.status_avatar) div {
-		padding: 8px !important;
-		margin-right: 8px;
-		border-radius: calc(var(--border-radius) * 9999);
-	}
-
-	.status_avatar img {
-		border-radius: 50%;
-		margin-left: 8px;
-	}
-
-
-
-	/* --- content --- */
-	.nblock-headerleft, .cblock-headerleft, .sblock-headerleft {
-		border-radius: var(--border-radius) 0 0 0;
-	}
-	.nblock-headerright, .cblock-headerright, .sblock-headerright {
-		border-radius: 0 var(--border-radius) 0 0;
-	}
-	.nblock-bottom, .cblock-bottom, .sblock-bottom {
-		border-radius: 0 0 var(--border-radius) var(--border-radius);
-	}
-	.cblock-top {
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-	}
-
-	.small {
-		color: var(--fg2);
-	}
-
-	.colhead {
-		border: 0;
-	}
-
-	.barmax, .bar {
-		border: 0;
-		border-radius: 4px;
-	}
-
-	.torrenttable img {
-		border-radius: 8px;
-	}
-
-
-
-	/* --- tables ---
-	td { border: 0; }
-	td:first-of-type { border-radius: var(--border-radius) 0 0 0; }
-	td:last-of-type { border-radius: 0 var(--border-radius) 0 0; }
-	tr:last-of-type td { border-radius: 0 0 var(--border-radius) var(--border-radius);}
-	*/
-
-
-
-	/* --- legend ??? --- */
-	fieldset { border: 0; }
-	legend {
-		width: 100%;
-		padding: 0;
-	}
-
-
-
-}
-@-moz-document url-prefix("https://filelist.io/") {
-	/* borders */
-
-	/* --- posts --- */
-	.torrentrow:last-of-type {
-		border-radius: 0 0 var(--border-radius) var(--border-radius);
-	}
-	.torrentrow:first-of-type {
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-		background: #fff;
-	}
-
-	/* --- tables --- */
-	#sectionmain .sectiontitle {
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-		border: 0;
-	}
-	#forummain .forumrow { border: 0; }
-	#forummain .forumrow:last-of-type {
-		border-radius: 0 0 var(--border-radius) var(--border-radius);
-	}
-
-	/* --- footer --- */
-	#footer {
-		border-radius: var(--border-radius) var(--border-radius) 0 0;
-	}
-}
+/*# sourceMappingURL=borders.css.map */
 
 @-moz-document url-prefix("https://filelist.io/") {
-	/* fonts */
-	:root {
-		--font-family: "Cantarell";
-	}
-
-	html, body, #navigation, #footerInner h2, .cblock-header h4, .nblock-header h4, .sblock-header h4, select, textarea, input, #poll_container {
-		font-family: var(--font-family), sans-serif;
-	}
-
-	.nblock-header h4, .cblock-header h4, .sblock-header h4 {
-		font-size: 11pt;
-	}
+  :root {
+    --border-radius: 8px;
+  }
+  /* --- general stuff --- */
+  input, select, input.btn {
+    border: 0;
+    border-radius: var(--border-radius);
+  }
+  input.btn, input.btn:hover {
+    padding: 2px;
+  }
+  .pager span a, .pager span.current, .pager a:link,
+  .forumpager span a, .forumpager span.current, .forumpager a:link {
+    border: 0;
+    border-radius: var(--border-radius);
+  }
+  /* --- header --- */
+  .mainheader {
+    height: 128px;
+  }
+  .subheader {
+    width: 100%;
+  }
+  #navigation {
+    margin: 0;
+    top: 0;
+    width: 100%;
+  }
+  #nav {
+    height: 32px;
+    padding: 4px;
+  }
+  #nav ul li {
+    border-radius: calc(var(--border-radius) / 2);
+    margin-right: 4px;
+  }
+  .logo {
+    display: none;
+  }
+  /* statusbar */
+  .statusbar {
+    border: 0;
+    width: 100%;
+    text-align: center;
+  }
+  .statusbar div {
+    float: none !important;
+    display: inline !important;
+  }
+  .statusbar div:not(.status_avatar) div {
+    padding: 8px !important;
+    margin-right: 8px;
+    border-radius: calc(var(--border-radius) * 9999);
+  }
+  .status_avatar img {
+    border-radius: 50%;
+    margin-left: 8px;
+  }
+  /* --- content --- */
+  .nblock-headerleft, .cblock-headerleft, .sblock-headerleft {
+    border-radius: var(--border-radius) 0 0 0;
+  }
+  .nblock-headerright, .cblock-headerright, .sblock-headerright {
+    border-radius: 0 var(--border-radius) 0 0;
+  }
+  .nblock-bottom, .cblock-bottom, .sblock-bottom {
+    border-radius: 0 0 var(--border-radius) var(--border-radius);
+  }
+  .cblock-top {
+    border-radius: var(--border-radius) var(--border-radius) 0 0;
+  }
+  .small {
+    color: var(--fg2);
+  }
+  .colhead {
+    border: 0;
+  }
+  .barmax, .bar {
+    border: 0;
+    border-radius: 4px;
+  }
+  .torrenttable img {
+    border-radius: 8px;
+  }
+  /* --- tables --- */
+  /* --- legend ??? --- */
+  fieldset {
+    border: 0;
+  }
+  legend {
+    width: 100%;
+    padding: 0;
+  }
 }
+
+/*# sourceMappingURL=changes.css.map */
+
+@-moz-document url-prefix("https://filelist.io/") {
+  :root {
+    --h: #1d2021;
+    --s: #32302f;
+    --bg0: #282828;
+    --bg1: #3c3836;
+    --bg2: #504945;
+    --bg3: #665c54;
+    --bg4: #7c6f64;
+    --bg5: #928374;
+    --fg4: #a89984;
+    --fg3: #bdae93;
+    --fg2: #d5c4a1;
+    --fg1: #ebdbb2 /* text color */;
+    --fg0: #fbf1c7;
+    --dred: #cc241d;
+    --dorange: #d65d0e;
+    --dyellow: #d79921;
+    --dgreen: #98971a;
+    --daqua: #689d6a;
+    --dblue: #458588;
+    --dpurple: #b16286;
+    --bred: #fb4934;
+    --borange: #fe8019;
+    --byellow: #fabd2f;
+    --bgreen: #b8bb26;
+    --baqua: #8ec07c;
+    --bblue: #83a598;
+    --bpurple: #d3869b;
+  }
+  /* -- general stuff -- */
+  a:link {
+    color: var(--dblue);
+  }
+  a:visited {
+    color: var(--dpurple);
+  }
+  input, select, input.btn, input.lbtn {
+    background: var(--bg3);
+    color: var(--fg1) !important;
+  }
+  input.btn:hover, input.lbtn:hover {
+    background: var(--bg4);
+  }
+  input.btn:active, input.lbtn:active {
+    background: var(--bg5);
+  }
+  .pager a, .pager a:link,
+  .forumpager a, .forumpager a:link {
+    background: var(--bg3);
+    color: var(--fg1);
+  }
+  .pager span.current {
+    background: var(--bg5);
+  }
+  .pager a:hover {
+    background: var(--bg4);
+  }
+  .pager a:active {
+    background: var(--bg5);
+  }
+  /* --- navbar --- */
+  .mainheader {
+    background: var(--bg0);
+  }
+  #nav {
+    background: var(--h);
+  }
+  #nav ul li a {
+    color: var(--fg1);
+  }
+  #nav ul li:hover, #nav ul li.active {
+    background: var(--bg0);
+  }
+  #nav ul li.active a {
+    color: var(--fg1);
+  }
+  #nav ul li a:hover {
+    color: var(--fg1);
+  }
+  #nav ul li:active {
+    background: var(--bg1);
+  }
+  #wrapper {
+    background-color: var(--bg0);
+  }
+  /* --- statusbar --- */
+  .statusbar {
+    color: var(--fg1);
+    background: none;
+  }
+  .statusbar a {
+    color: var(--fg1);
+  }
+  .statusbar div:not(.status_avatar) div {
+    background: var(--bg1);
+  }
+  /* --- content --- */
+  .nblock-header, .nblock-headerleft, .nblock-headerright,
+  .cblock-header, .cblock-headerleft, .cblock-headerright, .cblock-top,
+  .sblock-header, .sblock-headerleft, .sblock-headerright {
+    background: var(--bg1);
+    box-shadow: inset 0 0 0 1px var(--bg2);
+  }
+  .nblock-content, .cblock-content, .sblock-content, .colhead,
+  .nblock-bottom, .cblock-bottom, .sblock-bottom {
+    background: var(--bg2);
+  }
+  .clearfix::after {
+    content: "";
+    padding-bottom: 2px;
+    visibility: visible;
+    background: linear-gradient(0deg, var(--bg1), transparent);
+  }
+  .barmax {
+    background: var(--daqua);
+  }
+  .bar {
+    background: var(--dyellow);
+  }
+  /* --- posts --- */
+  .torrentrow {
+    background: var(--bg1);
+  }
+  .torrenttable {
+    border-color: var(--bg1);
+  }
+  /* --- tables --- */
+  td {
+    background: var(--bg1);
+  }
+  td.colhead {
+    background: var(--bg0);
+  }
+  tr {
+    background: none;
+  }
+  table {
+    border: 0;
+    border-radius: var(--border-radius);
+    background: none;
+  }
+  table th {
+    background: var(--bg0);
+    color: var(--fg1);
+    text-shadow: none;
+  }
+  table td, table tr.even td, table tr:hover {
+    background: var(--bg1);
+    text-shadow: none;
+  }
+  .infomark {
+    color: var(--fg1);
+  }
+  /* --- forum --- */
+  #sectionmain .sectiontitle {
+    background: var(--bg1);
+  }
+  #forummain .forumrow {
+    background: var(--bg1);
+  }
+  /* --- legend ??? --- */
+  fieldset, legend {
+    background: var(--bg1);
+  }
+  /* --- footer --- */
+  #footer, #copyright {
+    background: var(--h);
+  }
+  #footerInner h2 {
+    border-color: var(--bg5);
+  }
+}
+
+/*# sourceMappingURL=colors.css.map */
+
+@-moz-document url-prefix("https://filelist.io/") {
+  :root {
+    --font-family: "Cantarell";
+  }
+  html, body, #navigation, #footerInner h2, .cblock-header h4, .nblock-header h4, .sblock-header h4, select, textarea, input, #poll_container {
+    font-family: var(--font-family), sans-serif;
+  }
+  .nblock-header h4, .cblock-header h4, .sblock-header h4 {
+    font-size: 11pt;
+  }
+}
+
+/*# sourceMappingURL=fonts.css.map */
+

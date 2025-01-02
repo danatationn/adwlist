@@ -1,0 +1,7 @@
+[project]
+name = "adwlist"
+version = "1.0.0"
+description = "a stylesheet aiming to make FileList look more modern"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = []

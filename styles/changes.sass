@@ -1,0 +1,108 @@
+@-moz-document url-prefix("https://filelist.io/")
+	:root
+		--border-radius: 8px
+
+	/* --- general stuff --- */
+	input, select, input.btn
+		border: 0
+		border-radius: var(--border-radius)
+
+	input.btn, input.btn:hover
+		padding: 2px
+
+	.pager span a, .pager span.current, .pager a:link,
+	.forumpager span a, .forumpager span.current, .forumpager a:link
+		border: 0
+		border-radius: var(--border-radius)
+
+	/* --- header --- */
+	.mainheader
+		height: 128px
+
+	.subheader
+		width: 100%
+
+	#navigation
+		margin: 0
+		top: 0
+		width: 100%
+
+	#nav
+		height: 32px
+		padding: 4px
+
+	#nav ul li
+		border-radius: calc(var(--border-radius) / 2)
+		margin-right: 4px
+
+	.logo
+		display: none
+
+	/* statusbar */
+
+	.statusbar
+		border: 0
+		width: 100%
+		text-align: center
+
+	.statusbar div
+		float: none !important
+		display: inline !important
+
+	.statusbar div:not(.status_avatar) div
+		padding: 8px !important
+		margin-right: 8px
+		border-radius: calc(var(--border-radius) * 9999)
+
+
+	.status_avatar img
+		border-radius: 50%
+		margin-left: 8px
+
+	/* --- content --- */
+	.nblock-headerleft, .cblock-headerleft, .sblock-headerleft
+		border-radius: var(--border-radius) 0 0 0
+
+	.nblock-headerright, .cblock-headerright, .sblock-headerright
+		border-radius: 0 var(--border-radius) 0 0
+
+	.nblock-bottom, .cblock-bottom, .sblock-bottom
+		border-radius: 0 0 var(--border-radius) var(--border-radius)
+
+	.cblock-top
+		border-radius: var(--border-radius) var(--border-radius) 0 0
+
+	.small
+		color: var(--fg2)
+
+	.colhead
+		border: 0
+
+	.barmax, .bar
+		border: 0
+		border-radius: 4px
+
+	.torrenttable img
+		border-radius: 8px
+
+	/* --- tables --- */
+	//td
+	//	border: 0
+	//
+	//td:first-of-type
+	//	border-radius: var(--border-radius) 0 0 0
+	//
+	//td:last-of-type
+	//	border-radius: 0 var(--border-radius) 0 0
+	//
+	//tr:last-of-type td
+	//	border-radius: 0 0 var(--border-radius) var(--border-radius)
+	//
+
+	/* --- legend ??? --- */
+	fieldset
+		border: 0
+
+	legend
+		width: 100%
+		padding: 0
