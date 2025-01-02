@@ -6,6 +6,19 @@ the general look is taken from the adwaita design language, hence the name
 
 Note this isn't trying to completely imitate it as that would take way too long i just want it to look like it
 
+## installation
+
+
+first install a theming extension like stylus
+[![chrome webstore](https://cdn.simpleicons.org/chromewebstore)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
+[![firefox extensions](https://cdn.simpleicons.org/firefoxbrowser)](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
+
+then click on this below
+
+[![Install directly with Stylus](https://img.shields.io/badge/Install%20directly%20with-Stylus-238b8b.svg)](https://github.com/danatationn/adwlist/raw/refs/heads/main/style.user.css)
+
+orrr [click on this](https://github.com/danatationn/adwlist/raw/refs/heads/main/style.user.css) (they both lead to the same link 😁)
+
 ## roadmap
 - [ ] everything on the site being replaced
 - [ ] custom icons
