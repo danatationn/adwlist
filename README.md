@@ -10,8 +10,9 @@ Note this isn't trying to completely imitate it as that would take way too long 
 
 
 first install a theming extension like stylus
-[![chrome webstore](https://cdn.simpleicons.org/chromewebstore)](https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne)
-[![firefox extensions](https://cdn.simpleicons.org/firefoxbrowser)](https://addons.mozilla.org/en-US/firefox/addon/styl-us/)
+<a href="https://chromewebstore.google.com/detail/stylus/clngdbkpkpeebahjckkjfobafhncgmne"> <img width="16" src="https://cdn.simpleicons.org/googlechrome"> </a>
+<a href="https://addons.mozilla.org/en-US/firefox/addon/styl-us/"> <img width="16" src="https://cdn.simpleicons.org/firefoxbrowser"> </a>
+
 
 then click on this below
 
