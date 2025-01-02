@@ -1,42 +1,34 @@
 from pathlib import Path
 
-import subprocess, shutil
-
 
 def main() -> None:
-    styles_path = Path.cwd() / 'styles'
-    if not styles_path.exists():
-        raise FileNotFoundError('styles/ has not been found. \nplease redownload the repo and try again')
+	styles_path = Path.cwd() / 'styles'
+	if not styles_path.exists():
+		raise FileNotFoundError('styles/ has not been found. \nplease redownload the repo and try again')
 
-    dartsass_path = Path(shutil.which('sass'))
-    if not dartsass_path.exists():
-        raise FileNotFoundError('dart-sass is not installed. \bplease get it and come back')
+	styles = sorted(styles_path.rglob('*.less'))
+	usercss_path = Path.cwd() / 'styles' / 'user.css'
+	if not usercss_path.exists():
+		raise FileNotFoundError('kldjfklsdjkfl')
 
-    subprocess.run([dartsass_path, styles_path])
+	with open(usercss_path, 'r') as f:
+		compiled_less = f.read() + '\n'
 
-    styles = sorted(styles_path.rglob('*.css'))
+	compiled_less += '@-moz-document url-prefix("https://filelist.io") {' + '\n'
 
-    # the usercss thing needs to be at the top !!.,
-    index = None
-    for style in styles:
-        if style.name == 'user.css':
-            index = styles.index(style)
+	for style in styles:
+		with open(style, 'r') as f:
+			compiled_less += f.read() + '\n'
 
-    if not index:
-        raise FileNotFoundError('styles/user.css has not been found. \nplease redownload the repo and try again')
+	compiled_less += '}' + '\n'
 
-    styles.insert(0, styles.pop(index))
+	compiled_path = Path.cwd() / 'style.user.css'
+	with open(compiled_path, 'w') as f:
+		f.write(compiled_less)
 
-    css = ''
-    for style in styles:
-        with open(style, 'r') as f:
-            css += f.read() + '\n'
-
-    compiled_path = Path.cwd() / 'style.css'
-    with open(compiled_path, 'w') as f:
-        f.write(css)
+	print('succesfully compiled style.user.css 😎\n')
 
 
 if __name__ == '__main__':
-    main()
+	main()
 

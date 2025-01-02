@@ -1,0 +1,22 @@
+.statusbar {
+	border: 0;
+	width: 100%;
+	text-align: center;
+
+	div {
+		float: none !important;
+		display: inline !important;
+
+		&:not(.status_avatar) div {
+			padding: 8px !important;
+			margin-right: 8px;
+			border-radius: calc(var(--border-radius) * 9999);
+		}
+	}
+
+	img {
+		border-radius: 50%;
+		margin-left: 8px;
+
+	}
+}

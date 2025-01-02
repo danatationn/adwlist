@@ -1,0 +1,39 @@
+a {
+	&:link {
+		color: var(--dblue);
+	}
+	&:visited {
+		color: var(--dpurple);
+	}
+}
+
+input, select, input.btn, input.lbtn {
+	background: var(--bg3);
+	color: var(--fg1) !important;
+}
+
+input.btn:hover, input.lbtn {
+	&:hover {
+		background: var(--bg4);
+	}
+	&:active {
+		background: var(--bg5);
+	}
+}
+
+.pager a, .pager a:link,
+.forumpager a, .forumpager a:link {
+	background: var(--bg3);
+	color: var(--fg1);
+}
+.pager span.current {
+	background: var(--bg5);
+}
+.pager a {
+	&:hover {
+		background: var(--bg4)
+	}
+	&:active {
+		background: var(--bg5)
+	}
+}

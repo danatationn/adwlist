@@ -17,11 +17,10 @@ Note this isn't trying to completely imitate it as that would take way too long 
 
 ## compiling
 1. download the repo
-2. install [dart-sass](https://sass-lang.com/install/) (the command-line one)
-3. run `main.py`
-4. a file named `style.css` should appear
-5. stick it in a css extension thingy like `Stylus`
-6. Acquire and eat `booty` (I think that's what pirates say??)
+2. run `main.py`
+3. a file named `style.css` should appear
+4. stick it in a css extension thingy like `Stylus`
+5. Acquire and eat `booty` (I think that's what pirates say??)
 
 ## license
 [WTFPL](https://github.com/danatationn/adwlist/blob/main/LICENSE) © Sam Hocevar
