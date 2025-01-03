@@ -1,21 +1,25 @@
+.torrentrow {
+	&:last-of-type {
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
+	}
+
+	&:first-of-type {
+		border-radius: var(--border-radius) var(--border-radius) 0 0;
+		background: #fff;
+	}
+}
+
 .nblock-headerleft, .cblock-headerleft, .sblock-headerleft {
 	border-radius: var(--border-radius) 0 0 0;
 }
-
 .nblock-headerright, .cblock-headerright, .sblock-headerright {
 	border-radius: 0 var(--border-radius) 0 0;
 }
-
 .nblock-bottom, .cblock-bottom, .sblock-bottom {
 	border-radius: 0 0 var(--border-radius) var(--border-radius);
 }
-
 .cblock-top {
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-}
-
-.small {
-	color: var(--fg2);
 }
 
 .colhead {

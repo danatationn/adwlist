@@ -1,28 +1,24 @@
 .mainheader {
-  background: var(--bg0);
+	background: var(--bg0);
 }
 #nav {
-  background: var(--h);
+	background: var(--h);
 
-  ul li {
-    &:hover, .active {
-      background: var(--bg0);
+	ul li {
+		&:hover, &.active {
+			background: var(--bg0);
+		}
 
-      a, a:hover {
-        color: var(--fg1);
-      }
-    }
+		a, a:hover, &.active a {
+			color: var(--fg1);
+		}
 
-    a {
-      color: var(--fg1);
-    }
-
-    &:active {
-      background: var(--bg1);
-    }
-  }
+		&:active {
+			background: var(--bg1);
+		}
+	}
 }
 
 #wrapper {
-  background-color: var(--bg0);
+	background-color: var(--bg0);
 }
