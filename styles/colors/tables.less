@@ -1,6 +1,4 @@
 td {
-	background: var(--bg1);
-
 	.colhead {
 		background: var(--bg0);
 	}
@@ -21,8 +19,10 @@ table {
 		text-shadow: none;
 	}
 
-	td, tr.even td, tr:hover {
-		background: var(--bg1);
+	td, tr.even td, tr:hover, td {
+		&:not(.noborder) {
+			background: var(--bg1);
+		}
 		text-shadow: none;
 
 	}

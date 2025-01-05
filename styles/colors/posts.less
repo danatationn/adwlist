@@ -1,6 +1,19 @@
 .torrentrow {
-  background: var(--bg1);
+	background: var(--bg1);
 }
 .torrenttable {
-  border-color: var(--bg1);
+	border-color: var(--bg1);
+}
+
+.visitedlinks {
+	.colhead {
+		background: var(--bg1);
+
+		&:first-of-type {
+			border-top-left-radius: var(--border-radius);
+		}
+		&:last-of-type {
+			border-top-right-radius: var(--border-radius);
+		}
+	}
 }

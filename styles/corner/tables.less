@@ -13,3 +13,41 @@
 	}
 
 }
+
+td {
+	border: 0;
+}
+	//&:first-of-type {
+	//	border-radius: var(--border-radius) 0 0 0;
+	//}
+	//
+	//&:last-of-type {
+	//	border-radius: 0 var(--border-radius) 0 0;
+	//}
+
+tbody {
+	tr {
+		&:first-of-type {  // top
+			td:first-of-type {  // left
+				border-radius: var(--border-radius) 0 0 0;
+			}
+			td:last-of-type {  // right
+				border-radius: 0 var(--border-radius) 0 0;
+			}
+		}
+
+		&:last-of-type {  // bottom
+			td:first-of-type {  // left
+				border-radius: 0 0 0 var(--border-radius);
+			}
+			td:last-of-type {  // right
+				border-radius: 0 0 var(--border-radius) 0;
+			}
+		}
+	}
+}
+
+
+//tr:last-of-type td {
+//	border-radius: 0 0 var(--border-radius) var(--border-radius);
+//}
