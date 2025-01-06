@@ -19,7 +19,9 @@
     visibility: visible;
     background: linear-gradient(0deg, var(--bg1), transparent);
 
-    .cblock:has(> .cblock-top) & {  //
+    .cblock:has(.cblock-top) & {
+        // clearfix was modified with the header in mind
+        // it does not look good at all with any top
         padding: 0;
     }
 }
@@ -120,6 +122,10 @@ input.btn:hover, input.lbtn {
 	color: var(--fg2);
 }
 
+//input .checkbox {
+//	color: var(--bg3);
+//}
+// Too much work lol
 .nblock-header, .nblock-headerleft, .nblock-headerright,
 .cblock-header, .cblock-headerleft, .cblock-headerright,
 .sblock-header, .sblock-headerleft, .sblock-headerright {
@@ -139,6 +145,10 @@ input.btn:hover, input.lbtn {
 
 .visitedlinks .colhead {
 		background: var(--bg1);
+}
+
+hr.separator {
+	background: none;
 }
 :root {
   --h: #1d2021;
@@ -179,6 +189,24 @@ td {
 	}
 }
 
+form .colhead {
+	background: var(--bg3);
+
+	&:has(.featureditem) {
+		background: var(--bg4);
+		border-color: var(--bg5);
+
+		.featureditem {
+			visibility: hidden;
+		}
+	}
+}
+
+.normalline {
+	border: 1px solid var(--bg2);
+	width: 100%;
+}
+
 tr {
 	background: none;
 }
@@ -194,7 +222,7 @@ table {
 		text-shadow: none;
 	}
 
-	td, tr.even td, tr:hover, td {
+	td, tr.even td, td {
 		&:not(.noborder) {
 			background: var(--bg1);
 		}
@@ -277,6 +305,10 @@ tbody {
 			}
 		}
 	}
+}
+
+form .colhead {
+	border-radius: var(--border-radius);
 }
 
 .visitedlinks .colhead {
@@ -387,12 +419,11 @@ input.btn, input.btn:hover {
 			margin-right: 8px;
 			border-radius: calc(var(--border-radius) * 9999);
 		}
-	}
 
-	img {
-		border-radius: 50%;
-		margin-left: 8px;
-
+		&.status_avatar a img {
+			border-radius: 50%;
+			margin-left: 8px;
+		}
 	}
 }
 
@@ -433,5 +464,9 @@ td {
 
 #forummain .forumrow {
 	border: 0;
+}
+
+form .colhead {
+	border: 1px solid var(--bg4);
 }
 }

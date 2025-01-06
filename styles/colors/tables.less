@@ -4,6 +4,24 @@ td {
 	}
 }
 
+form .colhead {
+	background: var(--bg3);
+
+	&:has(.featureditem) {
+		background: var(--bg4);
+		border-color: var(--bg5);
+
+		.featureditem {
+			visibility: hidden;
+		}
+	}
+}
+
+.normalline {
+	border: 1px solid var(--bg2);
+	width: 100%;
+}
+
 tr {
 	background: none;
 }
@@ -19,7 +37,7 @@ table {
 		text-shadow: none;
 	}
 
-	td, tr.even td, tr:hover, td {
+	td, tr.even td, td {
 		&:not(.noborder) {
 			background: var(--bg1);
 		}
