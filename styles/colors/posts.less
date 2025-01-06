@@ -1,3 +1,13 @@
+.nblock-header, .nblock-headerleft, .nblock-headerright,
+.cblock-header, .cblock-headerleft, .cblock-headerright,
+.sblock-header, .sblock-headerleft, .sblock-headerright {
+	background: var(--bg1);
+}
+
+.cblock-top {
+	background: var(--bg2);
+}
+
 .torrentrow {
 	background: var(--bg1);
 }
@@ -5,15 +15,6 @@
 	border-color: var(--bg1);
 }
 
-.visitedlinks {
-	.colhead {
+.visitedlinks .colhead {
 		background: var(--bg1);
-
-		&:first-of-type {
-			border-top-left-radius: var(--border-radius);
-		}
-		&:last-of-type {
-			border-top-right-radius: var(--border-radius);
-		}
-	}
 }

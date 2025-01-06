@@ -1,53 +1,42 @@
 /* --- tables --- */
 #sectionmain .sectiontitle {
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	border: 0;
 }
 
-#forummain {
-	.forumrow {
-		border: 0;
-		&:last-of-type {
-			border-radius: 0 0 var(--border-radius) var(--border-radius);
-		}
+#forummain .forumrow {
+	&:last-of-type {
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
 	}
-
 }
-
-td {
-	border: 0;
-}
-	//&:first-of-type {
-	//	border-radius: var(--border-radius) 0 0 0;
-	//}
-	//
-	//&:last-of-type {
-	//	border-radius: 0 var(--border-radius) 0 0;
-	//}
 
 tbody {
 	tr {
 		&:first-of-type {  // top
 			td:first-of-type {  // left
-				border-radius: var(--border-radius) 0 0 0;
+				border-top-left-radius: var(--border-radius);
+
 			}
 			td:last-of-type {  // right
-				border-radius: 0 var(--border-radius) 0 0;
+				border-top-right-radius: var(--border-radius);
 			}
 		}
 
 		&:last-of-type {  // bottom
 			td:first-of-type {  // left
-				border-radius: 0 0 0 var(--border-radius);
+				border-bottom-left-radius: var(--border-radius);
 			}
 			td:last-of-type {  // right
-				border-radius: 0 0 var(--border-radius) 0;
+				border-bottom-right-radius: var(--border-radius);
 			}
 		}
 	}
 }
 
-
-//tr:last-of-type td {
-//	border-radius: 0 0 var(--border-radius) var(--border-radius);
-//}
+.visitedlinks .colhead {
+	&:first-of-type {
+		border-top-left-radius: var(--border-radius);
+	}
+	&:last-of-type {
+		border-top-right-radius: var(--border-radius);
+	}
+}

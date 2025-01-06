@@ -1,9 +1,3 @@
-.nblock-header, .nblock-headerleft, .nblock-headerright,
-.cblock-header, .cblock-headerleft, .cblock-headerright, .cblock-top,
-.sblock-header, .sblock-headerleft, .sblock-headerright {
-    background: var(--bg1);
-}
-
 .nblock-content, .cblock-content, .sblock-content, .colhead,
 .nblock-bottom, .cblock-bottom, .sblock-bottom {
     background: var(--bg2);
@@ -14,7 +8,14 @@
     padding-bottom: 2px;
     visibility: visible;
     background: linear-gradient(0deg, var(--bg1), transparent);
+
+    .cblock:has(> .cblock-top) & {
+        // clearfix was modified with the header in mind
+        // it does not look good at all with any top
+        padding: 0;
+    }
 }
+
 
 .barmax {
     background: var(--daqua);

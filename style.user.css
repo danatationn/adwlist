@@ -8,12 +8,6 @@
 @preprocessor   less
 ==/UserStyle== */
 @-moz-document url-prefix("https://filelist.io") {
-.nblock-header, .nblock-headerleft, .nblock-headerright,
-.cblock-header, .cblock-headerleft, .cblock-headerright, .cblock-top,
-.sblock-header, .sblock-headerleft, .sblock-headerright {
-    background: var(--bg1);
-}
-
 .nblock-content, .cblock-content, .sblock-content, .colhead,
 .nblock-bottom, .cblock-bottom, .sblock-bottom {
     background: var(--bg2);
@@ -24,7 +18,12 @@
     padding-bottom: 2px;
     visibility: visible;
     background: linear-gradient(0deg, var(--bg1), transparent);
+
+    .cblock:has(> .cblock-top) & {  //
+        padding: 0;
+    }
 }
+
 
 .barmax {
     background: var(--daqua);
@@ -121,6 +120,16 @@ input.btn:hover, input.lbtn {
 	color: var(--fg2);
 }
 
+.nblock-header, .nblock-headerleft, .nblock-headerright,
+.cblock-header, .cblock-headerleft, .cblock-headerright,
+.sblock-header, .sblock-headerleft, .sblock-headerright {
+	background: var(--bg1);
+}
+
+.cblock-top {
+	background: var(--bg2);
+}
+
 .torrentrow {
 	background: var(--bg1);
 }
@@ -128,17 +137,8 @@ input.btn:hover, input.lbtn {
 	border-color: var(--bg1);
 }
 
-.visitedlinks {
-	.colhead {
+.visitedlinks .colhead {
 		background: var(--bg1);
-
-		&:first-of-type {
-			border-top-left-radius: var(--border-radius);
-		}
-		&:last-of-type {
-			border-top-right-radius: var(--border-radius);
-		}
-	}
 }
 :root {
   --h: #1d2021;
@@ -243,61 +243,50 @@ table {
 }
 
 .torrenttable img {
-	border-radius: 8px;
+	border-radius: var(--border-radius);
 }
 /* --- tables --- */
 #sectionmain .sectiontitle {
 	border-radius: var(--border-radius) var(--border-radius) 0 0;
-	border: 0;
 }
 
-#forummain {
-	.forumrow {
-		border: 0;
-		&:last-of-type {
-			border-radius: 0 0 var(--border-radius) var(--border-radius);
-		}
+#forummain .forumrow {
+	&:last-of-type {
+		border-radius: 0 0 var(--border-radius) var(--border-radius);
 	}
-
 }
-
-td {
-	border: 0;
-}
-	//&:first-of-type {
-	//	border-radius: var(--border-radius) 0 0 0;
-	//}
-	//
-	//&:last-of-type {
-	//	border-radius: 0 var(--border-radius) 0 0;
-	//}
 
 tbody {
 	tr {
 		&:first-of-type {  // top
 			td:first-of-type {  // left
-				border-radius: var(--border-radius) 0 0 0;
+				border-top-left-radius: var(--border-radius);
+
 			}
 			td:last-of-type {  // right
-				border-radius: 0 var(--border-radius) 0 0;
+				border-top-right-radius: var(--border-radius);
 			}
 		}
 
 		&:last-of-type {  // bottom
 			td:first-of-type {  // left
-				border-radius: 0 0 0 var(--border-radius);
+				border-bottom-left-radius: var(--border-radius);
 			}
 			td:last-of-type {  // right
-				border-radius: 0 0 var(--border-radius) 0;
+				border-bottom-right-radius: var(--border-radius);
 			}
 		}
 	}
 }
 
-
-//tr:last-of-type td {
-//	border-radius: 0 0 var(--border-radius) var(--border-radius);
-//}
+.visitedlinks .colhead {
+	&:first-of-type {
+		border-top-left-radius: var(--border-radius);
+	}
+	&:last-of-type {
+		border-top-right-radius: var(--border-radius);
+	}
+}
 :root {
 	--font-family: "Cantarell";
 }
@@ -408,9 +397,8 @@ input.btn, input.btn:hover {
 }
 
 .nblock-header, .nblock-headerleft, .nblock-headerright,
-.cblock-header, .cblock-headerleft, .cblock-headerright, .cblock-top,
+.cblock-header, .cblock-headerleft, .cblock-headerright,
 .sblock-header, .sblock-headerleft, .sblock-headerright {
-	background: var(--bg1);
 	box-shadow: inset 0 1px var(--bg2);
 }
 
@@ -424,11 +412,26 @@ input.btn, input.btn:hover {
 
 .nblock-content, .cblock-content, .sblock-content {
 	box-shadow:
-			inset 1px 0 var(--bg3),
-				inset -1px 0 var(--bg3);
+		inset 1px 0 var(--bg3),
+		inset -1px 0 var(--bg3);
 }
 
 .nblock-bottom, .cblock-bottom, .sblock-bottom {
 	box-shadow: inset 0 -1px var(--bg3);
+}
+
+.cblock-top {
+	box-shadow: inset 1px 1px var(--bg3);
+}
+#sectionmain .sectiontitle {
+	border: 0;
+}
+
+td {
+	border: 0;
+}
+
+#forummain .forumrow {
+	border: 0;
 }
 }
